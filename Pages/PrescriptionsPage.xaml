@@ -1,0 +1,36 @@
+﻿<Page x:Class="Clinic.Pages.PrescriptionsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Рецепты"
+      IsVisibleChanged="Page_IsVisibleChanged">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Панель управления -->
+        <StackPanel Orientation="Horizontal"
+                Grid.Row="0"
+                HorizontalAlignment="Right"
+                Margin="0,0,0,5">
+            <Button Content="Добавить" Click="ButtonAdd_OnClick" Width="100" Height="30" Margin="5"/>
+            <Button Content="Изменить" Click="ButtonEdit_OnClick" Width="100" Height="30" Margin="5"/>
+            <Button Content="Удалить" Click="ButtonDelete_OnClick" Width="100" Height="30" Margin="5"/>
+        </StackPanel>
+
+        <!-- DataGrid -->
+        <DataGrid x:Name="PrescriptionsDataGrid"
+              Grid.Row="1"
+              AutoGenerateColumns="False"
+              IsReadOnly="True"
+              CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding prescription_id}" Width="SizeToHeader"/>
+                <DataGridTextColumn Header="Запись ID" Binding="{Binding record_id}" Width="SizeToHeader"/>
+                <DataGridTextColumn Header="Лекарство" Binding="{Binding drugs.drug_name}" Width="*"/>
+                <DataGridTextColumn Header="Описание" Binding="{Binding description}" Width="2*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

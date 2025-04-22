@@ -1,0 +1,45 @@
+﻿<Page x:Class="Clinic.Pages.AddMedicalRecordPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Добавить медицинскую запись">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Пациент:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Margin="5"/>
+        <ComboBox x:Name="cmbPatient" Grid.Row="0" Grid.Column="1" Margin="5" Height="25"
+              DisplayMemberPath="last_name" SelectedValuePath="patient_id"/>
+
+        <TextBlock Text="Врач:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="5"/>
+        <ComboBox x:Name="cmbDoctor" Grid.Row="1" Grid.Column="1" Margin="5" Height="25"
+              DisplayMemberPath="last_name" SelectedValuePath="doctor_id"/>
+
+        <TextBlock Text="Дата приёма:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Margin="5"/>
+        <DatePicker x:Name="dpVisitDate" Grid.Row="2" Grid.Column="1" Margin="5" Height="30"/>
+
+        <TextBlock Text="Диагноз:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Margin="5"/>
+        <TextBox x:Name="txtDiagnosis" Grid.Row="3" Grid.Column="1" Margin="5" Height="25"/>
+
+        <TextBlock Text="Лечение:" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" Margin="5"/>
+        <TextBox x:Name="txtTreatment" Grid.Row="4" Grid.Column="1" Margin="5" Height="25"/>
+
+        <TextBlock Text="Примечания:" Grid.Row="5" Grid.Column="0" VerticalAlignment="Top" Margin="5"/>
+        <TextBox x:Name="txtNotes" Grid.Row="5" Grid.Column="1" VerticalAlignment="Top" Margin="5" Height="80" TextWrapping="Wrap" AcceptsReturn="True"/>
+
+        <StackPanel Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"
+                Orientation="Horizontal" HorizontalAlignment="Center" Margin="100,100,100,0">
+            <Button Content="Сохранить" Click="ButtonSave_OnClick" Width="100" Height="30" Margin="5"/>
+            <Button Content="Отмена" Click="ButtonCancel_OnClick" Width="100" Height="30" Margin="5"/>
+        </StackPanel>
+    </Grid>
+</Page>

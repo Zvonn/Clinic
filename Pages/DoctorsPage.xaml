@@ -1,0 +1,45 @@
+﻿<Page x:Class="Clinic.Pages.DoctorsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Врачи"
+      IsVisibleChanged="Page_IsVisibleChanged">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Панель управления -->
+        <StackPanel Orientation="Horizontal"
+                Grid.Row="0"
+                HorizontalAlignment="Right"
+                Margin="0,0,0,5">
+            <Button Content="Добавить врача"
+              Click="ButtonAdd_OnClick"
+              Width="150" Height="30" Margin="5"/>
+            <Button Content="Изменить"
+              Click="ButtonEdit_OnClick"
+              Width="100" Height="30" Margin="5"/>
+            <Button Content="Удалить"
+              Click="ButtonDelete_OnClick"
+              Width="100" Height="30" Margin="5"/>
+        </StackPanel>
+
+        <!-- DataGrid -->
+        <DataGrid x:Name="DoctorsDataGrid"
+              Grid.Row="1"
+              AutoGenerateColumns="False"
+              IsReadOnly="True"
+              CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding doctor_id}" Width="SizeToHeader"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding first_name}" Width="*"/>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding last_name}" Width="*"/>
+                <DataGridTextColumn Header="Контакт" Binding="{Binding contact_info}" Width="*"/>
+                <DataGridTextColumn Header="Специализация"
+                            Binding="{Binding speciallizations.specialization_name}"
+                            Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

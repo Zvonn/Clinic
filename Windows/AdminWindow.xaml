@@ -1,0 +1,28 @@
+﻿<NavigationWindow x:Class="Clinic.Windows.AdminWindow"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  Title="Административное окно" Height="600" Width="800"
+                  ShowsNavigationUI="False">
+    <NavigationWindow.Content>
+        <DockPanel>
+            <!-- Верхняя панель выбора таблицы -->
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="10">
+                <ComboBox x:Name="cbTables" Width="250" Margin="5">
+                    
+                    <ComboBoxItem Content="Записи на приём" Tag="Pages/AppointmentsPage.xaml"/>
+                    <ComboBoxItem Content="Врачи" Tag="Pages/DoctorsPage.xaml"/>
+                    <ComboBoxItem Content="Медицинские записи" Tag="Pages/MedicalRecordsPage.xaml"/>
+                    <ComboBoxItem Content="Пациенты" Tag="Pages/PatientsPage.xaml"/>
+                    <ComboBoxItem Content="Лекарства" Tag="Pages/DrugsPage.xaml"/>
+                    <ComboBoxItem Content="Пользователи" Tag="Pages/UsersPage.xaml"/>
+                    <ComboBoxItem Content="Рецепты" Tag="Pages/PrescriptionsPage.xaml"/>
+
+                </ComboBox>
+                <Button Content="Перейти" Width="115" Margin="5" Click="BtnNavigate_Click" Height="30" FontSize="15"/>
+            </StackPanel>
+
+            <!-- Контейнер для отображения выбранной страницы -->
+            <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
+        </DockPanel>
+    </NavigationWindow.Content>
+</NavigationWindow>
