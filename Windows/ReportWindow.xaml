@@ -1,0 +1,44 @@
+﻿<Window x:Class="Clinic.Windows.ReportWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Генерация отчетов" Height="350" Width="450">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Выберите тип отчета для создания:" 
+                   FontSize="16" 
+                   FontWeight="Bold" 
+                   Margin="0,0,0,20" 
+                   HorizontalAlignment="Center"/>
+
+        <StackPanel Grid.Row="1" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" 
+                    Width="300">
+
+            <Button x:Name="BtnDoctorReport" 
+                    Content="Отчет по посещаемости врачей (Excel)" 
+                    Margin="0,10" 
+                    Padding="10" 
+                    Click="BtnDoctorReport_Click"
+                    Height="50" Width="250"/>
+
+            <Button x:Name="BtnDiagnosisReport" 
+                    Content="Отчет по диагнозам пациентов (Word)" 
+                    Margin="0,10" 
+                    Padding="10" 
+                    Click="BtnDiagnosisReport_Click"
+                    Height="50" Width="250"/>
+
+            <Button x:Name="BtnDiagnosisStatsReport" 
+                    Content="Статистика по диагнозам (Excel)" 
+                    Margin="0,10" 
+                    Padding="10" 
+                    Click="BtnDiagnosisStatsReport_Click"
+                    Height="50" Width="250"/>
+        </StackPanel>
+    </Grid>
+</Window>

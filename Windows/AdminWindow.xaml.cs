@@ -1,4 +1,5 @@
-﻿using System;
+﻿// Обновленная версия Windows/AdminWindow.xaml.cs
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
@@ -28,6 +29,12 @@ namespace Clinic.Windows
             {
                 MessageBox.Show("Выберите таблицу для просмотра", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
             }
+        }
+
+        private void BtnReports_Click(object sender, RoutedEventArgs e)
+        {
+            ReportWindow reportWindow = new ReportWindow();
+            reportWindow.ShowDialog();
         }
     }
 }
